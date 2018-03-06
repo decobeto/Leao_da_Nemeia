@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<br />
+<br />
+  <%##= form_tag busca_paciente_path, method: :get, class: "row" do %>
+  <%#=form_tag url_for(:controller => "pacientes", :action => "busca"), :method => "get", :class => "row" do %>
+    <div class="form-inline">
+      <%#= text_field_tag :nome, nil, class: "form-control mr-sm-2"%>
+      <%#= submit_tag "Buscar", class: "btn btn-outline-primary my-2 my-sm-0"%>
+    </div>
+  <%# end %>
+<br />
+<br />
+<div class="container">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Cpf</th>
+        <th>Nome mae</th>
+      </tr>
+    </thead>    
+    <tbody>
+      <% @pacientes.each do |paciente| %>
+        <tr>
+          <td><%= paciente.nome %></td>
+          <td><%= paciente.cpf %></td>
+          <td><%= paciente.nome_mae %></td>
+          <td><%= link_to 'Mostrar Informações do Paciente', paciente, class: "btn btn-primary" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<br>
+
+<%= link_to 'Cadastrar Novo Paciente', new_paciente_path, class: "btn btn-primary" %>

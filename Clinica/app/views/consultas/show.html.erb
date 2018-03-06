@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Informações Detalhadas</h1>
+<br />
+
+<table class="table table-bordered">
+  <tbody>
+    <tr>
+      <th><strong>Paciente:</strong></th>
+      <td><%= @paciente.nome %></td>
+    </tr>
+    <tr>
+      <th><strong>Data:</strong></th>
+      <td> <%= @consulta.data %></td>
+    </tr>
+    <tr>
+      <th><strong>Descricao:</strong></th>
+      <td><%= @consulta.descricao %></td>
+    </tr>
+    <tr>
+      <th><strong>Complementos:</strong></th>
+      <% @consulta.receitas.each do |receita| %>
+        <td><%= receita.complementos %></td>
+      <% end %>
+    </tr>
+    <tr>
+      <th><strong>Medicamento:</strong></th>
+      <% @consulta.medicamentos.each do |medicamento| %>
+        <td><%= medicamento.nome_medicamento %></td>
+      <% end %>
+    </tr>
+    <tr>
+    </tr>
+  </tbody>
+</table
+      
+<th><%= link_to 'Voltar', paciente_consultas_path,class: "btn btn-primary" %></th>
+
+
+

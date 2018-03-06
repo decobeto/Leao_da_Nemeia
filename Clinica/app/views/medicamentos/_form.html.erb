@@ -1,0 +1,25 @@
+<%= form_for(@medicamento) do |f| %>
+  <% if @medicamento.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@medicamento.errors.count, "error") %> prohibited this medicamento from being saved:</h2>
+
+      <ul>
+      <% @medicamento.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group col-md-12">
+    <%= f.label :nome_medicamento %><br>
+    <%= f.text_field :nome_medicamento, class: "form-control" %>
+  </div>
+  <div class="form-group col-md-12">
+    <%= f.label :uso %><br>
+    <%= f.select :uso,  options_for_select(["Interno", "Externo"], :include_blank => 'Selecione o modo de uso...', class: "form-control") %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Cadastrar Medicamento", class: "btn btn-primary" %>
+  </div>
+<% end %>

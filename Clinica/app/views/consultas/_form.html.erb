@@ -1,0 +1,43 @@
+<%= form_for [@paciente, @consulta] do |f| %>
+  <% if @consulta.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@consulta.errors.count, "error") %> prohibited this consulta from being saved:</h2>
+
+      <ul>
+      <% @consulta.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %> 
+
+  <h3>Paciente: <%= @paciente.nome %></h3>
+  <p>
+  <div class="form-row"> 
+    <div class="form-group">
+      <%= f.label :paciente_id, class: "hide"%><br>
+      <%= f.text_field :paciente_id, class: "hide" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :data %><br>
+      <%= f.date_field :data, value: f.object.try(:strftime,"%m/%d/%Y"), class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :descricao %><br>
+      <%= f.text_area :descricao, class: "form-control" %>
+    </div>
+  </div> 
+  <div class="form-row">
+    <h2>Receita</h2>
+    <div class="form-group">
+      <%= f.fields_for :receitas do |receitas_fields| %>
+        Complementos:<p><%= receitas_fields.text_area :complementos, class: "form-control" %></p>
+        Medicamentos:<p><%= receitas_fields.collection_select( :medicamento_id, Medicamento.all, :id, :nome_medicamento ,class: "form-control" )%></p>           
+      <% end %>
+    </div>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Gerar Consulta", class: "btn btn-primary" %>
+  </div>
+<% end %>

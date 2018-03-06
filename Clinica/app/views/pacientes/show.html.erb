@@ -1,0 +1,60 @@
+<p id="notice"><%= notice %></p>
+
+<table class="table table-bordered">
+  <tbody>
+    <tr>
+      <th><strong>Nome:</strong></th>
+      <td><%= @paciente.nome %></td>
+    </tr>
+    <tr>
+      <th><strong>Cpf:</strong></th>
+      <td><%= @paciente.cpf %></td>
+    </tr>
+    <tr>
+      <th><strong>Rg:</strong></th>
+      <td><%= @paciente.rg %></td>
+    </tr>
+    <tr>
+      <th><strong>Nome mae:</strong></th>
+      <td><%= @paciente.nome_mae %></td>
+    </tr>
+    <tr>
+      <th><strong>Nome pai:</strong></th>
+      <td><%= @paciente.nome_pai %></td>
+    </tr>
+    <tr>
+      <th><strong>Estado civil:</strong></th>
+      <td><%= @paciente.estado_civil %></td>
+    </tr>
+    <tr>
+      <th><strong>Nome conjuge:</strong></th>
+      <td><%= @paciente.nome_conjuge %></td>
+    </tr>
+    <tr>
+      <th><strong>Endereco:</strong></th>
+      <td><%= @paciente.endereco %></td>
+    </tr>
+    <tr>
+      <th><strong>Bairro:</strong></th>
+      <td><%= @paciente.bairro %></td>
+    </tr>
+    <tr>
+      <th><strong>Cep:</strong></th>
+      <td><%= @paciente.cep %></td>
+    </tr>
+    <tr>
+      <th><strong>Cidade:</strong></th>
+      <td><%= @paciente.cidade %></td>
+    </tr>
+    <tr>
+      <th><strong>Uf:</strong></th>
+      <td><%= @paciente.uf %></td>   
+    </tr>
+</tbody>
+</table>
+
+<%= link_to 'Editar', edit_paciente_path(@paciente), class: "btn btn-info" %> 
+<%= link_to 'Deletar', paciente_path, method: :delete, class: "btn btn-danger" , data: { confirm: 'Tem certeza que deseja deletar o paciente selecionado' } %>
+<%= link_to "Nova Consulta", new_paciente_consulta_path(@paciente), class: "btn btn-primary" %>
+<%= link_to "Consultas Anteriores", paciente_consultas_path(@paciente), class: "btn btn-primary" %>
+<%= link_to 'Voltar', pacientes_path, class: "btn btn-primary" %>

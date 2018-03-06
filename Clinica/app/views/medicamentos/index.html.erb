@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Nome medicamento</th>
+        <th>Uso</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @medicamentos.each do |medicamento| %>
+        <tr>
+          <td><%= medicamento.nome_medicamento %></td>
+          <td><%= medicamento.uso %></td>
+          <td><%= link_to 'Mostrar', medicamento, class: "btn btn-primary" %></td>
+          <td><%= link_to 'Editar', edit_medicamento_path(medicamento), class: "btn btn-info" %></td>
+          <td><%= link_to 'Deletar', medicamento, method: :delete, data: { confirm: 'Tem certeza que deseja deletar o medicamento selecionado?' }, class: "btn btn-danger" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<br>
+
+<%= link_to 'Novo Medicamento', new_medicamento_path, class: "btn btn-primary" %>

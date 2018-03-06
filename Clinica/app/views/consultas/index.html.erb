@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Lista de Consultas</h1>
+<br />
+<div class="container">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Paciente</th>
+        <th>Data</th>
+        <th>Descricao</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @todas_consultas.each do |consulta| %>
+        <tr>
+          <td><%= @paciente.nome %></td>
+          <td><%= consulta.data %></td>
+          <td><%= consulta.descricao %></td>
+          <td><%= link_to 'Mostrar Informações Detalhadas', paciente_consulta_path(consulta.paciente, consulta), class: "btn btn-primary" %></td>
+          <td><%= link_to 'Editar', edit_paciente_consulta_path(consulta.paciente, consulta), class: "btn btn-info" %></td>
+          <td><%= link_to 'Deletar', paciente_consulta_path(consulta.paciente, consulta), method: :delete, data: { confirm: 'Você tem certeza que deseja apagar a Consulta selecionada?' }, class: "btn btn-danger" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<br>
+
+<%= link_to 'Nova Consulta', new_paciente_consulta_path, class: "btn btn-primary" %>
+

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  consulta_id: 
+  medicamento_id: 
+  complementos: MyString
+
+two:
+  consulta_id: 
+  medicamento_id: 
+  complementos: MyString

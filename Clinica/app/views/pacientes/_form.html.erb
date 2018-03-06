@@ -1,0 +1,67 @@
+<%= form_for(@paciente) do |f| %>
+  <% if @paciente.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@paciente.errors.count, "error") %> prohibited this paciente from being saved:</h2>
+
+      <ul>
+      <% @paciente.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group col-md-12">
+    <%= f.label :nome %><br>
+    <%= f.text_field :nome, class: "form-control" %>
+  </div>
+  <div class="form-group col-md-6">
+    <%= f.label :cpf %><br>
+    <%= f.text_field :cpf, class: "form-control"  %>
+  </div>
+  <div class="form-group col-md-6">
+    <%= f.label :rg %><br>
+    <%= f.text_field :rg, class: "form-control"  %>
+  </div>
+  <div class="form-group col-md-6">
+    <%= f.label :nome_mae %><br>
+    <%= f.text_field :nome_mae, class: "form-control"  %>
+  </div>
+  <div class="form-group col-md-6">
+    <%= f.label :nome_pai %><br>
+    <%= f.text_field :nome_pai, class: "form-control"  %>
+  </div>
+  <div class="form-group col-md-6">
+    <%= f.label :estado_civil %><br>
+    <%= f.select :estado_civil,options_for_select(["Solteiro(a)", "Casado(a)", "Divorciado(a)", "Viúvo(a)", "Separado(a)", "União Estável"]), :include_blank => 'Estado Civil...', class: "form-control"  %>
+  </div>
+  <div class="form-group col-md-6">
+    <%= f.label :nome_conjuge %><br>
+    <%= f.text_field :nome_conjuge, class: "form-control"  %>
+  </div>
+  <div class="form-group col-md-4">
+    <%= f.label :endereco %><br>
+    <%= f.text_field :endereco, class: "form-control"  %>
+  </div>
+  <div class="form-group col-md-4">
+    <%= f.label :bairro %><br>
+    <%= f.text_field :bairro, class: "form-control"  %>
+  </div>
+  <div class="form-group col-md-4">
+    <%= f.label :cep %><br>
+    <%= f.text_field :cep, class: "form-control"  %>
+  </div>
+  <div class="form-group col-md-6">
+    <%= f.label :cidade %><br>
+    <%= f.text_field :cidade, class: "form-control"  %>
+  </div>
+  <div class="form-group col-md-6">
+    <%= f.label :uf %><br>
+    <%= f.select :uf, options_for_select(["AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RR", "RO", "RJ", "RN", "RS", "SC", "SP", "SE", "TO"]), :include_blank => 'Selecione o estado...', class: "form-control"  %>
+  </div>
+  <div class="form-group col-md-12">
+    <div class="actions">
+      <%= f.submit "Cadastrar Paciente",class: "btn btn-primary " %>
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,29 @@
+<%= form_for(@receita) do |f| %>
+  <% if @receita.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@receita.errors.count, "error") %> prohibited this receita from being saved:</h2>
+
+      <ul>
+      <% @receita.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :consulta_id %><br>
+    <%= f.text_field :consulta_id %>
+  </div>
+  <div class="field">
+    <%= f.label :medicamento_id %><br>
+    <%= f.text_field :medicamento_id %>
+  </div>
+  <div class="field">
+    <%= f.label :complementos %><br>
+    <%= f.text_field :complementos %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

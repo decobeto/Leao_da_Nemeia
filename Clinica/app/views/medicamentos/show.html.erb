@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+
+<table class="table table-bordered">
+  <tr>
+    <th><strong>Nome medicamento:</strong></th>
+    <td><%= @medicamento.nome_medicamento %></td>
+  </tr>
+  <tr>
+    <th><strong>Uso:</strong></th>
+    <td><%= @medicamento.uso %></td>
+  </tr>
+</table>
+
+<%= link_to 'Editar', edit_medicamento_path(@medicamento), class: "btn btn-info" %> 
+<%= link_to 'Voltar', medicamentos_path, class: "btn btn-primary" %>

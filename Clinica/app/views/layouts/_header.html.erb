@@ -1,0 +1,16 @@
+<div class= "navbar" >
+  <%= nav_bar brand: "MedCom", brand_link: root_url do %>
+    <%= menu_group do %>
+      <%= menu_item "Pacientes", pacientes_path%>
+      <%= menu_item "Medicamentos", medicamentos_path %>
+      <%#= menu_item "Consultas", paciente_consultas_path(@paciente) %>
+      <%#= menu_item "Receitas", receitas_path %>
+      <%#= form_tag homes_busca_path, method: :get ,class: "navbar-form navbar-right" do %>
+        <div class="form-group">
+          <%#= text_field_tag :nome, @nome_a_buscar, class: "form-control" %>
+          <%#= button_to "Buscar", nil, class: "btn btn-default" %>
+        </div>
+      <%# end %>
+    <% end %>
+   <% end %>
+</div>

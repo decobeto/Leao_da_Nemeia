@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Lista de Receitas</h1>
+
+<div class="container">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Consulta</th>
+        <th>Medicamento</th>
+        <th>Complementos</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @receitas.each do |receita| %>
+        <tr>
+          <td><%= receita.consulta %></td>
+          <td><%= medicamento.nome_medicamento %></td>
+          <td><%= receita.complementos %></td>
+          <td><%= link_to 'Mostrar', receita, class: "btn btn-primary" %></td>
+          <td><%= link_to 'Editar', edit_receita_path(receita), class: "btn btn-info" %></td>
+          <td><%= link_to 'Destroy', receita, method: :delete, data: { confirm: 'Você tem certeza que deseja apagar a Consulta selecionada?' }, class: "btn btn-primary" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<br>
+
+<%#= link_to 'Gerar Nova Receita', new_receita_path, class: "btn btn-primary" %>
