@@ -1,4 +1,4 @@
-# Leao_da_Nemeia
+# Medcom
 
 Software de gestão de clínicas e hospitais, trata-se apenas uma forma de treinar a maneira de trabalhar com rails e de entender como funciona a rotina de hospitais e clínicas.
 
